@@ -34,7 +34,7 @@ jobs:
         uses: Vampire/setup-wsl@v1
 
         run: |
-          sudo apt-get update
-          sudo apt-get install python-pip git libffi-dev libssl-dev -y
-          sudo pip install --user ansible pywinrm
+          apt-get update
+          apt-get install python-pip git libffi-dev libssl-dev -y
+          pip install --user ansible pywinrm
         
