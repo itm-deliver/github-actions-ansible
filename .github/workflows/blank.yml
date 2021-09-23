@@ -26,6 +26,8 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run 1
+        run: wsl --install
+      - name: Run 1
         run: wsl -e apt-get update
       - name: Run 2
         run: wsl -e sudo apt-get install python-pip git libffi-dev libssl-dev -y
