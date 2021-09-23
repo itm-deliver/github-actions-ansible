@@ -19,22 +19,22 @@ jobs:
   build:
     # The type of runner that the job will run on
     runs-on: windows-2019
+
+    defaults:
+      run:
+        shell: wsl-bash {0}
+
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
       # Runs a single command using the runners shell
-      - name: Run 1
-        run: Invoke-WebRequest -Uri https://aka.ms/wslubuntu2004 -OutFile Ubuntu.appx -UseBasicParsing
-      - name: appx
-        run: Import-Module Appx
-      - name: Run 1
-        run: Rename-Item .\Ubuntu.appx .\Ubuntu.zip
-      - name: Run 1
-        run: wsl -e apt-get update
-      - name: Run 2
-        run: wsl -e sudo apt-get install python-pip git libffi-dev libssl-dev -y
-      - name: Run 3
-        run: wsl -e pip install --user ansible pywinrm
+      - name: setup wsl
+        uses: Vampire/setup-wsl@v1
+
+        run: |
+          sudo apt-get update
+          sudo apt-get install python-pip git libffi-dev libssl-dev -y
+          sudo pip install --user ansible pywinrm
         
