@@ -32,9 +32,17 @@ jobs:
       # Runs a single command using the runners shell
       - name: setup wsl
         uses: Vampire/setup-wsl@v1
+        # with:
+        #   additional-packages:
+        #     python3-pip
+        #     git
+        #     libffi-dev
+        #     libssl-dev
+        #     ansible
+        #     pywinrm
 
       - run: |
           apt-get update
-          apt-get install python-pip git libffi-dev libssl-dev -y
-          pip install --user ansible pywinrm
+          apt-get install python3-pip git libffi-dev libssl-dev -y
+          pip3 install --user ansible pywinrm
         
