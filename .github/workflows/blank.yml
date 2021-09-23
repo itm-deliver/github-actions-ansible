@@ -26,9 +26,9 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run 1
-        run: wsl --list
-      # - name: Run 2
-      #   run: sudo apt-get install python-pip git libffi-dev libssl-dev -y
-      # - name: Run 3
-      #   run: pip install --user ansible pywinrm
-
+        run: wsl -e apt-get update
+      - name: Run 2
+        run: wsl -e sudo apt-get install python-pip git libffi-dev libssl-dev -y
+      - name: Run 3
+        run: wsl -e pip install --user ansible pywinrm
+        
