@@ -33,7 +33,7 @@ jobs:
       - name: setup wsl
         uses: Vampire/setup-wsl@v1
 
-        run: |
+      - run: |
           apt-get update
           apt-get install python-pip git libffi-dev libssl-dev -y
           pip install --user ansible pywinrm
