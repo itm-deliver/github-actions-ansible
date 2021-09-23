@@ -44,7 +44,7 @@ jobs:
       - run: |
           apt-get update
           apt-get install python3-pip git libffi-dev libssl-dev -y
-          pip3 install --user ansible pywinrm
+          pip3 install ansible pywinrm
 
       - run: |
           ansible --version
