@@ -25,6 +25,10 @@ jobs:
       - uses: actions/checkout@v2
 
       # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: docker run hello-world:linux
-
+      - name: Run 1
+        run: apt-get update
+      - name: Run 2
+        run: sudo apt-get install python-pip git libffi-dev libssl-dev -y
+      - name: Run 3
+        run: pip install --user ansible pywinrm
+        
