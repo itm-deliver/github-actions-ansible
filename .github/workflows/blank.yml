@@ -26,7 +26,7 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run 1
-        run: wsl --install
+        run: wsl --install -d ubuntu
       - name: Run 1
         run: wsl -e apt-get update
       - name: Run 2
